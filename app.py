@@ -1,10 +1,9 @@
 from flask import Flask, request, jsonify
 from models.task import Task
 
-# __name__ sendo executado como mais quando é feito de forma manual
 app = Flask(__name__)
 
-# No momento utilizando uma lista pois não tem um banco de dados
+# Utilizando uma lista no lugar de um banco de dados
 task = []
 taskid = 1
 
@@ -44,6 +43,5 @@ def get_task(id):
 
 # app.run é utilizado para iniciar, rodar a aplicação
 # A propriedade debug é utilizado para mostrar as funcionalidades do servidor web (logs)
-# **** Nunca utilizar essa forma para fornecer a clientes ****
 if __name__ == '__main__':
     app.run(debug=True)

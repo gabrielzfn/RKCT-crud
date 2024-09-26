@@ -1,0 +1,4 @@
+Flask==2.3.0                # Framework
+Flask-SQLAlchemy==3.1.1     # Biblioteca
+Flask-Cors==3.0.10          # Biblioteca
+Werkzeug==2.3.0             # Biblioteca

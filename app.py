@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from models.task import Task
-
 app = Flask(__name__)
 
 # Utilizando uma lista no lugar de um banco de dados
@@ -44,7 +43,7 @@ def get_task(id):
 
 # Put
 @app.route('/tasks/<int:id>', methods=["PUT"])
-def updatet(id):
+def update_task(id):
     task = None
     for t in task:
         if t.id == id:
@@ -61,6 +60,22 @@ def updatet(id):
     print(task)
     
     return jsonify({"Message": "Tarefa atualizada com sucesso"})
+ 
+
+# Delete:
+@app.route('/tasks/<int:id>', methods=["DELETE"])
+def delete_task(id):
+    task = None
+    for t in tasks: 
+        if t.id == id:
+            task = t
+            break
+
+    if not task:
+        return jsonify({"Message": "Não foi possível encontrar a atividade."}), 404
+    
+    tasks.remove(task)
+    return jsonify({"Message": "Tarefa deletada com sucesso."})
 
 
 

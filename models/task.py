@@ -8,8 +8,7 @@ class Task:
     
     # Retorna as informações em dicionário
     def to_dict(self):
-        return 
-        {
+        return {
             "id"            : self.id,
             "title"         : self.title,
             "description"   : self.description,

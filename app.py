@@ -7,7 +7,7 @@ tasks = []
 taskid = 1
 
 
-# Create:
+# Post:
 @app.route('/tasks', methods=["POST"])
 def create_task():
     global taskid
